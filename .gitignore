@@ -1,0 +1,155 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.spec
+*.zip
+*.tar.gz
+*.tgz
+*.egg
+*.whl
+
+# Virtual environment
+.env/
+env/
+venv/
+ENV/
+VENV/
+pip-selfcheck.json
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+nbproject/
+*.DS_Store
+Thumbs.db
+
+# Panda3D specific (if any become relevant, like build artifacts or logs)
+# For now, the Python ones cover most needs.
+# Add specific Panda3D build or export folders if they are created, e.g.
+# deployed_game/
+
+# User-specific files (e.g. local settings, texture backups)
+# It's good practice for users to add their own specific ignores here if needed
+# For example:
+# my_local_settings.ini
+# assets/textures/*.bak
+
+# Installation script outputs (if any)
+# *.log
+
+# Compiled files from other languages if used (e.g. C++ extensions)
+# *.o
+# *.dll
+# *.exe
+# *.app
+# *.bundle
+# *.dylib
+# *.a
+# *.lib
+# *.out
+# *.elf
+# *.gch
+# *.pch
+# *.so.*
+# *.swp
+# *.swo
+# *~
+# .DS_Store
+# Thumbs.db
+# desktop.ini
+# ehthumbs.db
+# Icon?
+# .Spotlight-V100
+# .Trashes
+# .fseventsd
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like pytest-cov
+.coverage
+.coverage.*
+htmlcov/
+
+# Sphinx documentation
+docs/_build/
+
+# PyInstaller
+#  Usually these files are created by a CI server and don't need to be ignored
+#  by PyInstaller itself.
+# *.manifest
+# *.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# MyPy
+.mypy_cache/
+
+# Pytest
+.pytest_cache/
+.cache/
+
+# PEP 582; __pypackages__ directory
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+VENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# PyREMOTEd
+*.pyremote
+
+# PyCharm
+# Covers .idea/workspace.xml, .idea/misc.xml, .idea/modules.xml, and C/C++ related files
+.idea/*
+
+# End of .gitignore

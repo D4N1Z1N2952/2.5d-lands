@@ -1,7 +1,7 @@
 from direct.showbase.ShowBase import ShowBase
 from panda3d.core import CollisionTraverser, CollisionHandlerQueue, CollisionRay, CollisionNode, BitMask32, Point3, Vec3
-from player import Player
-from block import Block # Import the Block class
+from .player import Player # Relative import
+from .block import Block  # Relative import
 import math # For rounding positions
 
 class MyApp(ShowBase):

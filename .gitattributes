@@ -1,0 +1,1750 @@
+# Auto detect text files and ensure they use LF line endings on checkout.
+* text=auto eol=lf
+
+# Explicitly declare files that will always have LF line endings.
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.sh text eol=lf
+*.txt text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Declare files that will always have CRLF line endings (e.g. Windows batch files).
+# *.bat text eol=crlf
+
+# Declare files that should be treated as binary and not have their line endings changed.
+# *.png binary
+# *.jpg binary
+# *.jpeg binary
+# *.gif binary
+# *.bam binary
+# *.egg binary
+# *.egg.pz binary
+# (Panda3D model and texture files should generally be treated as binary)
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.ttf filter=lfs diff=lfs merge=lfs -text
+*.otf filter=lfs diff=lfs merge=lfs -text
+*.woff filter=lfs diff=lfs merge=lfs -text
+*.woff2 filter=lfs diff=lfs merge=lfs -text
+*.bam filter=lfs diff=lfs merge=lfs -text
+*.egg filter=lfs diff=lfs merge=lfs -text
+*.egg.pz filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.mtl filter=lfs diff=lfs merge=lfs -text
+*.gltf filter=lfs diff=lfs merge=lfs -text
+*.glb filter=lfs diff=lfs merge=lfs -text
+# Add other binary file types as needed
+# *.wav binary
+# *.ogg binary
+# *.mp3 binary
+# *.ttf binary
+# *.otf binary
+# *.woff binary
+# *.woff2 binary
+# *.eot binary
+# *.zip binary
+# *.gz binary
+# *.tar binary
+# *.7z binary
+# *.pdf binary
+# *.doc binary
+# *.docx binary
+# *.xls binary
+# *.xlsx binary
+# *.ppt binary
+# *.pptx binary
+# *.odt binary
+# *.ods binary
+# *.odp binary
+# *.blend binary
+# *.fbx binary
+# *.psd binary
+# *.ai binary
+# *.svg binary (can be text, but sometimes better as binary if complex)
+# *.ico binary
+# *.cur binary
+# *.exe binary
+# *.dll binary
+# *.so binary
+# *.dylib binary
+# *.jar binary
+# *.class binary
+# *.pyc binary
+# *.pyo binary
+# *.pyd binary
+# *.rpyc binary (Ren'Py compiled script)
+# *.rpyb binary (Ren'Py compiled script, alternate)
+# *.rpa binary (Ren'Py archive)
+# *.rpym binary (Ren'Py compiled module)
+# *.rpymc binary (Ren'Py compiled module cache)
+# *.rpy binary (Ren'Py script - usually text, but ensure consistency)
+# *.apk binary
+# *.ipa binary
+# *.app binary
+# *.dmg binary
+# *.pkg binary
+# *.deb binary
+# *.rpm binary
+# *.msi binary
+# *.msu binary
+# *.msm binary
+# *.cab binary
+# *.xpi binary
+# *.crx binary
+# *.nex binary
+# *.oxt binary
+# *.safariextz binary
+# *.xpt binary
+# *.xul binary
+# *.xlam binary
+# *.xlsb binary
+# *.xltm binary
+# *.xltx binary
+# *.potm binary
+# *.potx binary
+# *.ppam binary
+# *.ppsm binary
+# *.ppsx binary
+# *.pptm binary
+# *.sldm binary
+# *.sldx binary
+# *.thmx binary
+# *.vsd binary
+# *.vsdx binary
+# *.vss binary
+# *.vssx binary
+# *.vst binary
+# *.vstx binary
+# *.vdw binary
+# *.dwg binary
+# *.dxf binary
+# *.dgn binary
+# *.stl binary
+# *.3ds binary
+# *.max binary
+# *.c4d binary
+# *.lwo binary
+# *.lxo binary
+# *.ma binary
+# *.mb binary
+# *.obj binary
+# *.ply binary
+# *.skp binary
+# *.dae binary
+# *.uasset binary (Unreal Engine asset)
+# *.umap binary (Unreal Engine map)
+# *.unity binary (Unity scene/asset)
+# *.prefab binary (Unity prefab)
+# *.mat binary (Unity material)
+# *.asset binary (Unity generic asset)
+# *.anim binary (Unity animation)
+# *.controller binary (Unity animator controller)
+# *.meta binary (Unity metadata - usually text, but ensure consistency)
+# *.shader binary (Unity shader - usually text, but ensure consistency)
+# *.cginc binary (Unity shader include - usually text, but ensure consistency)
+# *.hlsl binary (HLSL shader - usually text, but ensure consistency)
+# *.glsl binary (GLSL shader - usually text, but ensure consistency)
+# *.metal binary (Metal shader - usually text, but ensure consistency)
+# *.gd binary (Godot script - usually text, but ensure consistency)
+# *.tscn binary (Godot scene - usually text, but ensure consistency)
+# *.tres binary (Godot resource - usually text, but ensure consistency)
+# *.import binary (Godot import metadata - usually text, but ensure consistency)
+# *.scn binary (Godot scene - older binary format)
+# *.res binary (Godot resource - older binary format)
+# *.stex binary (Godot stream texture)
+# *.tex binary (Godot texture)
+# *.gdc binary (Godot compiled script)
+# *.gde binary (Godot encrypted script)
+# *.pck binary (Godot pack file)
+# *.efk binary (Effekseer effect file)
+# *.efkpkg binary (Effekseer package file)
+# *.es PICO-8 source file (usually text, but ensure consistency)
+# *.p8 PICO-8 cartridge file (usually text, but ensure consistency)
+# *.p8.png PICO-8 cartridge file (PNG cart)
+# *.tic TIC-80 cartridge file
+# *.wasm WebAssembly binary
+# *.wast WebAssembly text format (usually text, but ensure consistency)
+# *.wat WebAssembly text format (usually text, but ensure consistency)
+# *.zst Zstandard compressed file
+# *.br Brotli compressed file
+# *.lz4 LZ4 compressed file
+# *.lzma LZMA compressed file
+# *.lzo LZO compressed file
+# *.xz XZ compressed file
+# *.bz2 BZip2 compressed file
+# *.rz Rzip compressed file
+# *.sz Snappy compressed file
+# *.sfc Super Famicom / SNES ROM
+# *.smc Super Famicom / SNES ROM
+# *.nes Nintendo Entertainment System ROM
+# *.gb Game Boy ROM
+# *.gbc Game Boy Color ROM
+# *.gba Game Boy Advance ROM
+# *.nds Nintendo DS ROM
+# *.3ds Nintendo 3DS ROM
+# *.cia Nintendo 3DS Installable Archive
+# *.srl Nintendo DS ROM
+# *.ids Nintendo DS ROM
+# *.sav Save file (generic)
+# *.srm Save file (RetroArch)
+# *.state Save state (emulators)
+# *.bmp Bitmap image
+# *.tif Tagged Image File Format
+# *.tiff Tagged Image File Format
+# *.webp WebP image
+# *.heic High Efficiency Image File Format
+# *.heif High Efficiency Image File Format
+# *.avif AV1 Image File Format
+# *.jxl JPEG XL image
+# *.hdr High Dynamic Range image
+# *.exr OpenEXR image
+# *.ktx Khronos Texture
+# *.pvr PowerVR Texture
+# *.dds DirectDraw Surface
+# *.astc Adaptive Scalable Texture Compression
+# *.basis Basis Universal Texture
+# *.opus Opus audio
+# *.flac Free Lossless Audio Codec
+# *.aac Advanced Audio Coding
+# *.m4a MPEG-4 Audio
+# *.ape Monkey's Audio
+# *.wv WavPack audio
+# *.aiff Audio Interchange File Format
+# *.caf Core Audio Format
+# *.mid MIDI file
+# *.midi MIDI file
+# *.kar Karaoke MIDI file
+# *.rmi RIFF MIDI file
+# *.mp4 MPEG-4 video
+# *.mkv Matroska video
+# *.webm WebM video
+# *.mov QuickTime video
+# *.avi Audio Video Interleave
+# *.wmv Windows Media Video
+# *.flv Flash Video
+# *.mpg MPEG video
+# *.mpeg MPEG video
+# *.m2v MPEG-2 video
+# *.m4v MPEG-4 video
+# *.3gp 3GPP video
+# *.3g2 3GPP2 video
+# *.ogv Ogg Video
+# *.srt SubRip Subtitle
+# *.sub MicroDVD Subtitle / SubStation Alpha Subtitle
+# *.ssa SubStation Alpha Subtitle
+# *.ass Advanced SubStation Alpha Subtitle
+# *.vtt WebVTT Subtitle
+# *.idx VobSub Subtitle Index
+# *.sup Blu-ray Subtitle
+# *.psb Photoshop Big file
+# *.kra Krita document
+# *.ora OpenRaster image
+# *.xcf GIMP image
+# *.cpt Corel Photo-Paint image
+# *.pdn Paint.NET image
+# *.afphoto Affinity Photo document
+# *.afdesign Affinity Designer document
+# *.afpub Affinity Publisher document
+# *.kpp Krita document (older)
+# *.sif Synfig Animation
+# *.sfg Synfig Animation (older)
+# *.tvg TVPaint Animation
+# *.tva TVPaint Animation (older)
+# *.clip Clip Studio Paint file
+# *.sai PaintTool SAI file
+# *.sai2 PaintTool SAI Ver.2 file
+# *.ora OpenRaster
+# *.mdp FireAlpaca/MediBang Paint
+# *.abr Photoshop Brush
+# *.pat Photoshop Pattern
+# *.grd Photoshop Gradient
+# *.tpl Photoshop Tool Preset
+# *.acb Photoshop Color Book
+# *.aco Photoshop Color Swatch
+# *.ase Adobe Swatch Exchange
+# *.csh Photoshop Custom Shape
+# *.atn Photoshop Action
+# *.kys Photoshop Keyboard Shortcuts
+# *.mnu Photoshop Menu Customization
+# *.pspimage PaintShop Pro Image
+# *.pspbrush PaintShop Pro Brush
+# *.psptube PaintShop Pro Picture Tube
+# *.pspframe PaintShop Pro Picture Frame
+# *.pspshape PaintShop Pro Shape
+# *.pspstyle PaintShop Pro Style
+# *.pspt Preset
+# *.arw Sony Alpha Raw
+# *.cr2 Canon Raw 2
+# *.cr3 Canon Raw 3
+# *.crw Canon Raw
+# *.nef Nikon Electronic Format
+# *.nrw Nikon Raw
+# *.orf Olympus Raw Format
+# *.raw Panasonic Raw / Leica Raw / Contax Raw / Phase One Raw / Epson Raw / Adobe DNG
+# *.rw2 Panasonic Raw 2
+# *.rwl Leica Raw
+# *.srw Samsung Raw
+# *.srf Sony Raw Format
+# *.sr2 Sony Raw Format 2
+# *.dng Adobe Digital Negative
+# *.pef Pentax Electronic File
+# *.ptx Pentax Raw
+# *.raf Fujifilm Raw
+# *.kdc Kodak Digital Camera Raw
+# *.dcr Kodak Digital Camera Raw
+# *.mos Leaf Raw
+# *.mef Mamiya Raw
+# *.3fr Hasselblad Raw
+# *.fff Imacon/Hasselblad Raw
+# *.erf Epson Raw
+# *.iiq Phase One Raw
+# *.cap Phase One Raw
+# *.bay Casio Raw
+# *.mrw Minolta Raw
+# *.x3f Sigma Raw
+# *.ari ARRI Raw
+# *.r3d REDCODE Raw
+# *.braw Blackmagic Raw
+# *.ciff Camera Image File Format
+# *.log Log file (generic - often text, but can be binary)
+# *.dat Data file (generic)
+# *.bin Binary file (generic)
+# *.db Database file (generic)
+# *.sqlite SQLite database
+# *.sqlite3 SQLite database
+# *.sqlitedb SQLite database
+# *.db3 SQLite database
+# *.bak Backup file
+# *.tmp Temporary file
+# *.temp Temporary file
+# *.swp Swap file (Vim)
+# *.swo Swap file (Vim)
+# *.~ Backup file (Emacs/Kate)
+# *# Backup file (Emacs)
+# #*# Autosave file (Emacs)
+# %* Autosave file (TeX)
+# ._* AppleDouble header file
+# *.lock Lock file
+# *.DS_Store macOS Desktop Services Store
+# Thumbs.db Windows Thumbnail Cache
+# desktop.ini Windows Desktop Configuration
+# ehthumbs.db Windows Media Center Thumbnail Cache
+# Icon? macOS Custom Icon
+# .Spotlight-V100 macOS Spotlight Index
+# .Trashes macOS Trash
+# .fseventsd macOS File System Events Log
+# .localized macOS Localized Folder Name
+# *.lnk Windows Shortcut
+# *.url Windows Internet Shortcut
+# *.appref-ms Windows ClickOnce Application Reference
+# *.local App-local data (GNOME)
+# *.desktop Linux Desktop Entry
+# *.directory Linux Directory Entry
+# *.kdelnk KDE Link
+# *.theme Linux Theme Index
+# *.icon Linux Icon File
+# *.schemas GSettings Schema
+# *.gschema.xml GSettings Schema (XML)
+# *.mo Machine Object (gettext compiled translation)
+# *.po Portable Object (gettext translation source)
+# *.pot Portable Object Template (gettext translation template)
+# *.gmo GNU Machine Object (gettext compiled translation)
+# *.qm Qt Compiled Translation
+# *.ts Qt Translation Source
+# *.xlf XLIFF Localization File
+# *.xliff XLIFF Localization File
+# *.strings Apple Strings File
+# *.stringsdict Apple Strings Dictionary File
+# *.plist Apple Property List
+# *.bplist Apple Binary Property List
+# *.storyboard Apple Storyboard
+# *.xib Apple Interface Builder File
+# *.nib Apple Interface Builder File (older)
+# *.lproj Language Project Folder (Apple)
+# *.xcassets Asset Catalog (Apple)
+# *.appiconset App Icon Set (Apple)
+# *.imageset Image Set (Apple)
+# *.launchimage Launch Image Set (Apple)
+# *.brandassets Brand Assets (Apple)
+# *.dataset Data Set (Apple)
+# *.stickerpack Sticker Pack (Apple)
+# *.stickersequence Sticker Sequence (Apple)
+# *.scnassets SceneKit Asset Catalog (Apple)
+# *.playground Apple Playground
+# *.xcworkspace Xcode Workspace
+# *.xcodeproj Xcode Project
+# *.xcscmblueprint Xcode SCM Blueprint
+# *.xcscheme Xcode Scheme
+# *.xcsettings Xcode Settings
+# *.xccheckout Xcode Checkout
+# *.xcbuilddata Xcode Build Data
+# *.xcconfig Xcode Configuration File
+# *.pch Precompiled Header
+# *.gch GCC Precompiled Header
+# *.hmap Header Map
+# *.bridgesupport BridgeSupport File
+# *.def Module Definition File (Windows)
+# *.modulemap Clang Module Map
+# *.tbd Text-Based Stub Library (Apple)
+# *.bc LLVM Bitcode
+# *.ll LLVM Assembly
+# *.rl Ragel State Machine
+# *.re2c re2c Scanner
+# *.lex Lex Scanner
+# *.yacc Yacc Parser
+# *.y Bison Parser
+# *.g ANTLR Grammar
+# *.g4 ANTLR v4 Grammar
+# *.idl Interface Definition Language
+# *.proto Protocol Buffer Definition
+# *.thrift Apache Thrift Definition
+# *.capnp Cap'n Proto Definition
+# *.fbs FlatBuffers Schema
+# *.avsc Avro Schema
+# *.json-ld JSON-LD
+# *.raml RAML API Definition
+# *.yaml OpenAPI/Swagger Definition
+# *.yml OpenAPI/Swagger Definition
+# *.graphql GraphQL Schema/Query
+# *.gql GraphQL Schema/Query
+# *.prisma Prisma Schema
+# *.mjs ECMAScript Module
+# *.cjs CommonJS Module
+# *.wasm WebAssembly Module
+# *.wat WebAssembly Text Format
+# *.wast WebAssembly Text Format
+# *.coffee CoffeeScript
+# *.litcoffee Literate CoffeeScript
+# *.ts TypeScript
+# *.tsx TypeScript JSX
+# *.jsx JavaScript JSX
+# *.vue Vue Single File Component
+# *.svelte Svelte Component
+# *.elm Elm Module
+# *.purs PureScript Module
+# *.dart Dart Source File
+# *.kt Kotlin Source File
+# *.kts Kotlin Script
+# *.swift Swift Source File
+# *.go Go Source File
+# *.rs Rust Source File
+# *.rb Ruby Source File
+# *.php PHP Source File
+# *.pl Perl Script
+# *.pm Perl Module
+# *.py Python Script
+# *.pyw Python Script (Windows GUI)
+# *.pyd Python Extension Module (Windows)
+# *.pyx Cython Source File
+# *.pxd Cython Definition File
+# *.pxi Cython Include File
+# *.R R Script
+# *.Rmd R Markdown
+# *.Rnw Sweave/knitr R LaTeX
+# *.jl Julia Source File
+# *.ipynb Jupyter Notebook
+# *.scala Scala Source File
+# *.sc Scala Script
+# *.java Java Source File
+# *.class Java Class File
+# *.jar Java Archive
+# *.war Java Web Archive
+# *.ear Java Enterprise Archive
+# *.jsp JavaServer Pages
+# *.jspf JavaServer Pages Fragment
+# *.tag JavaServer Pages Tag File
+# *.tld Tag Library Descriptor
+# *.groovy Groovy Source File
+# *.gvy Groovy Source File (alternate)
+# *.gy Groovy Source File (alternate)
+# *.gsh Groovy Source File (alternate)
+# *.gradle Gradle Script
+# *.kts Gradle Kotlin Script
+# *.clj Clojure Source File
+# *.cljs ClojureScript Source File
+# *.cljc Clojure/ClojureScript Source File
+# *.edn Extensible Data Notation
+# *.hs Haskell Source File
+# *.lhs Literate Haskell Source File
+# *.c C Source File
+# *.h C Header File
+# *.cpp C++ Source File
+# *.hpp C++ Header File
+# *.cc C++ Source File
+# *.hh C++ Header File
+# *.cxx C++ Source File
+# *.hxx C++ Header File
+# *.C C++ Source File (alternate)
+# *.H C++ Header File (alternate)
+# *.inl C++ Inline Header
+# *.tpp C++ Template Implementation
+# *.cs C# Source File
+# *.vb Visual Basic Source File
+# *.fs F# Source File
+# *.fsi F# Signature File
+# *.fsx F# Script File
+# *.f F77/F90 Fortran Source
+# *.for F77/F90 Fortran Source
+# *.f90 F90 Fortran Source
+# *.f95 F95 Fortran Source
+# *.f03 F03 Fortran Source
+# *.f08 F08 Fortran Source
+# *.f18 F18 Fortran Source
+# *.cob COBOL Source File
+# *.cbl COBOL Source File
+# *.pas Pascal Source File
+# *.pp Pascal Source File (Free Pascal)
+# *.inc Pascal Include File
+# *.lpr Lazarus Project File
+# *.lfm Lazarus Form File
+# *.dfm Delphi Form File
+# *.dpr Delphi Project File
+# *.dpk Delphi Package File
+# *.dproj Delphi Project File (MSBuild)
+# *.groupproj Delphi Group Project File
+# *.cfg Configuration File (generic)
+# *.conf Configuration File (generic)
+# *.ini INI Configuration File
+# *.json JSON Data File
+# *.xml XML Data File
+# *.yaml YAML Data File
+# *.yml YAML Data File
+# *.toml TOML Configuration File
+# *.env Environment Variables File
+# *.sh Shell Script (Bash, sh, zsh)
+# *.bash Bash Script
+# *.zsh Zsh Script
+# *.fish Fish Script
+# *.ps1 PowerShell Script
+# *.psm1 PowerShell Module
+# *.psd1 PowerShell Data File
+# *.bat Windows Batch Script
+# *.cmd Windows Command Script
+# *.vbs VBScript
+# *.js JavaScript
+# *.mjs ECMAScript Module
+# *.cjs CommonJS Module
+# *.ts TypeScript
+# *.tsx TypeScript JSX
+# *.jsx React JSX
+# *.coffee CoffeeScript
+# *.dart Dart
+# *.py Python
+# *.rb Ruby
+# *.pl Perl
+# *.php PHP
+# *.swift Swift
+# *.java Java
+# *.kt Kotlin
+# *.scala Scala
+# *.go Go
+# *.rs Rust
+# *.c C
+# *.h C Header
+# *.cpp C++
+# *.hpp C++ Header
+# *.cs C#
+# *.fs F#
+# *.vb Visual Basic
+# *.pas Pascal
+# *.plsql PL/SQL
+# *.sql SQL Script
+# *.ddl SQL Data Definition Language
+# *.dml SQL Data Manipulation Language
+# *.lua Lua Script
+# *.tcl Tcl Script
+# *.scm Scheme Script
+# *.rkt Racket Script
+# *.lisp Lisp Script
+# *.cl Common Lisp Script
+# *.el Emacs Lisp Script
+# *.erl Erlang Source File
+# *.hrl Erlang Header File
+# *.ex Elixir Source File
+# *.exs Elixir Script
+# *.eex Elixir Embedded File
+# *.leex Elixir LiveView Embedded File
+# *.heex Elixir Phoenix HTML Embedded File
+# *.cr Crystal Source File
+# *.nim Nim Source File
+# *.d D Source File
+# *.di D Interface File
+# *.dd D Documentation File
+# *.vala Vala Source File
+# *.vapi Vala API File
+# *.vhd VHDL Source File
+# *.vhdl VHDL Source File
+# *.v Verilog Source File
+# *.sv SystemVerilog Source File
+# *.svh SystemVerilog Header File
+# *.agda Agda Source File
+# *.lagda Literate Agda Source File
+# *.idr Idris Source File
+# *.lidr Literate Idris Source File
+# *.ml OCaml Source File
+# *.mli OCaml Interface File
+# *.mll OCaml Lexer File
+# *.mly OCaml Parser File
+# *.fs F# Source File (also used by OCaml for F# interop)
+# *.fsi F# Interface File (also used by OCaml for F# interop)
+# *.hx Haxe Source File
+# *.ada Ada Source File
+# *.adb Ada Body File
+# *.ads Ada Specification File
+# *.asm Assembly Language
+# *.S Assembly Language (GNU)
+# *.s Assembly Language
+# *.nasm Netwide Assembler
+# *.yasm Yasm Assembler
+# *.z80 Z80 Assembly
+# *.a68 Algol 68 Source File
+# *.apl APL Source File
+# *.au3 AutoIt3 Script
+# *.ahk AutoHotkey Script
+# *.awk AWK Script
+# *.b B Language Source File
+# *.bas BASIC Source File (generic)
+# *.cls Visual Basic Class Module
+# *.frm Visual Basic Form Module
+# *.ctl Visual Basic User Control
+# *.dob Visual Basic User Document
+# *.dsr Visual Basic Active Designer
+# *.pag Visual Basic Property Page
+# *.clw Clarion Source File
+# *.cw Clarion Source File (alternate)
+# *.cob COBOL
+# *.cbl COBOL
+# *.cpy COBOL Copybook
+# *.dcl Digital Command Language
+# *.forth Forth Source File
+# *.4th Forth Source File
+# *.fs Forth Source File (alternate)
+# *.fth Forth Source File
+# *.frt Forth Source File
+# *.f77 Fortran 77
+# *.f Fortran (generic)
+# *.for Fortran (generic)
+# *.f90 Fortran 90
+# *.f95 Fortran 95
+# *.f03 Fortran 2003
+# *.f08 Fortran 2008
+# *.f18 Fortran 2018
+# *.g G-code
+# *.gco G-code
+# *.gcode G-code
+# *.groovy Groovy
+# *.gvy Groovy
+# *.gy Groovy
+# *.gsh Groovy
+# *.hcl HashiCorp Configuration Language
+# *.tf Terraform Configuration
+# *.tfvars Terraform Variables
+# *.tfstate Terraform State
+# *.tfstate.backup Terraform State Backup
+# *.jsonnet Jsonnet
+# *.libsonnet Jsonnet Library
+# *.jq jq Filter
+# *.kv Kivy Language
+# *.kv Kivy Language
+# *.lgt Logtalk Source File
+# *.P Logtalk Source File (alternate)
+# *.pro Prolog Source File
+# *.pl Prolog Source File (alternate - can conflict with Perl)
+# *.e Eiffel Source File
+# *.ace Eiffel Assembly
+# *.ec Extended C
+# *.m Objective-C Source File
+# *.mm Objective-C++ Source File
+# *.M Objective-C Source File (alternate)
+# *.metal Apple Metal Shading Language
+# *.pike Pike Source File
+# *.pmod Pike Module
+# *.pov POV-Ray Scene Description
+# *.inc POV-Ray Include File
+# *.mod Modula-2 Source File
+# *.def Modula-2 Definition Module
+# *.m2 Modula-2 Source File (alternate)
+# *.m3 Modula-3 Source File
+# *.i3 Modula-3 Interface
+# *.ig Modula-3 Generic Interface
+# *.mg Modula-3 Generic Module
+# *.nix Nix Expression Language
+# *.oz Oz Source File
+# *.pde Processing Sketch
+# *.pml Promela Source File
+# *.qml QML Source File
+# *.qs Q# Source File
+# *.r R Script
+# *.rd R Documentation File
+# *.re ReasonML Source File
+# *.rei ReasonML Interface File
+# *.red Red Source File
+# *.reds Red/System Source File
+# *.rex REXX Script
+# *.rexx REXX Script
+# *.rpg RPGLE Source File (ILE RPG)
+# *.rpgle RPGLE Source File
+# *.sqlrpgle SQL RPGLE Source File
+# *.clle CLLE Source File (ILE CL)
+# *.dspf DDS Display File Source
+# *.prtf DDS Printer File Source
+# *.lf DDS Logical File Source
+# *.pf DDS Physical File Source
+# *.cmd CL Command Source (IBM i)
+# *.sas SAS Program
+# *.sps SPSS Syntax File
+# *.do Stata Do-file
+# *.ado Stata Ado-file
+# *.mata Stata Mata Source File
+# *.sthlp Stata Help File
+# *.scd SuperCollider Code
+# *.sc SuperCollider Code (alternate)
+# *.scsyndef SuperCollider Synth Definition
+# *.scclass SuperCollider Class
+# *.schelp SuperCollider Help File
+# *.sol Solidity Source File
+# *.stan Stan Probabilistic Programming Language
+# *.sv SystemVerilog
+# *.svh SystemVerilog Header
+# *.v Verilog
+# *.vams Verilog-AMS
+# *.tex LaTeX Document
+# *.ltx LaTeX Document
+# *.cls LaTeX Class File
+# *.sty LaTeX Style File
+# *.bib BibTeX Bibliography
+# *.bst BibTeX Style File
+# *.mkiv ConTeXt MkIV Document
+# *.mkii ConTeXt MkII Document
+# *.mkxl ConTeXt MkXL Document
+# *.mk ConTeXt Document (generic)
+# *.tex ConTeXt Document (generic)
+# *.context ConTeXt Document (generic)
+# *.texi Texinfo Document
+# *.texinfo Texinfo Document
+# *.roff Troff/Groff Document
+# *.me Troff ME Macros
+# *.ms Troff MS Macros
+# *.mm Troff MM Macros
+# *.man Troff Man Page
+# *.md Markdown
+# *.markdown Markdown
+# *.mdown Markdown
+# *.mkd Markdown
+# *.mkdn Markdown
+# *.rst reStructuredText
+# *.rest reStructuredText
+# *.asciidoc AsciiDoc
+# *.adoc AsciiDoc
+# *.asc AsciiDoc
+# *.txt Plain Text
+# *.text Plain Text
+# *.textile Textile Markup
+# *.org Org Mode
+# *.wiki Wiki Markup (generic)
+# *.mediawiki MediaWiki Markup
+# *.creole Creole Wiki Markup
+# *.muse Muse Wiki Markup
+# *.html HTML
+# *.htm HTML
+# *.xhtml XHTML
+# *.shtml HTML with Server Side Includes
+# *.css CSS
+# *.scss SCSS (Sass)
+# *.sass Sass (indented syntax)
+# *.less Less CSS
+# *.styl Stylus CSS
+# *.js JavaScript
+# *.mjs JavaScript Module
+# *.cjs CommonJS Module
+# *.ts TypeScript
+# *.tsx TypeScript JSX
+# *.jsx JavaScript JSX
+# *.json JSON
+# *.jsonc JSON with Comments
+# *.json5 JSON5
+# *.webmanifest Web App Manifest
+# *.xml XML
+# *.xsd XML Schema Definition
+# *.xsl XSLT Stylesheet
+# *.xslt XSLT Stylesheet
+# *.dtd Document Type Definition
+# *.rng RELAX NG Schema (XML syntax)
+# *.rnc RELAX NG Schema (compact syntax)
+# *.svg Scalable Vector Graphics
+# *.xhtml XHTML
+# *.xht XHTML
+# *.xul XML User Interface Language
+# *.rdf RDF/XML
+# *.rss RSS Feed
+# *.atom Atom Feed
+# *.opml OPML
+# *.kml Keyhole Markup Language
+# *.gpx GPX (GPS Exchange Format)
+# *.dae Collada 3D Model
+# *.obj Wavefront OBJ 3D Model
+# *.mtl Wavefront MTL Material Library
+# *.gltf GL Transmission Format (JSON)
+# *.glb GL Transmission Format (Binary)
+# *.usdz Universal Scene Description (Zip)
+# *.usd Universal Scene Description
+# *.usda Universal Scene Description (ASCII)
+# *.usdc Universal Scene Description (Crate/Binary)
+# *.xaml XAML
+# *.xamlx XAML (alternate)
+# *.config .NET Configuration File
+# *.settings .NET Settings File
+# *.csproj C# Project File (MSBuild)
+# *.vbproj VB.NET Project File (MSBuild)
+# *.fsproj F# Project File (MSBuild)
+# *.vcxproj C++ Project File (MSBuild)
+# *.sln Visual Studio Solution
+# *.suo Visual Studio Solution User Options
+# *.user Visual Studio User Specific File (e.g., .csproj.user)
+# *.props MSBuild Property Sheet
+# *.targets MSBuild Target File
+# *.filters MSBuild Filter File (VC++)
+# *.resx .NET Resource File
+# *.resources .NET Compiled Resource File
+# *.manifest Application Manifest
+# *.xap Silverlight Application Package
+# *.xbap XAML Browser Application
+# *.appx Windows Store App Package
+# *.appxbundle Windows Store App Bundle
+# *.msix Windows App Package
+# *.msixbundle Windows App Bundle
+# *.cer Certificate File
+# *.crt Certificate File
+# *.pem Privacy Enhanced Mail (Certificate or Key)
+# *.key Private Key File
+# *.p12 PKCS#12 Certificate Bundle
+# *.pfx Personal Information Exchange (PKCS#12)
+# *.p7b PKCS#7 Certificate Chain
+# *.p7c PKCS#7 Certificate Chain
+# *.crl Certificate Revocation List
+# *.csr Certificate Signing Request
+# *.pub Public Key File
+# *.asc PGP ASCII Armor (Key or Signature)
+# *.gpg GPG Encrypted File or Key
+# *.sig PGP Signature
+# *.scriv Scrivener Project
+# *.scrivx Scrivener Project Index
+# *.mmap MindManager Mind Map
+# *.mm MindManager Mind Map (alternate)
+# *.xmind XMind Mind Map
+# *.mpp Microsoft Project File
+# *.mpt Microsoft Project Template
+# *.vsdx Visio Drawing
+# *.vsdm Visio Macro-Enabled Drawing
+# *.vssx Visio Stencil
+# *.vssm Visio Macro-Enabled Stencil
+# *.vstx Visio Template
+# *.vstm Visio Macro-Enabled Template
+# *.one OneNote Section
+# *.onetoc2 OneNote Table of Contents
+# *.onepkg OneNote Package
+# *.pub Microsoft Publisher File
+# *.xps XML Paper Specification
+# *.oxps Open XML Paper Specification
+# *.pdf Portable Document Format
+# *.ai Adobe Illustrator Artwork
+# *.eps Encapsulated PostScript
+# *.ps PostScript
+# *.indd Adobe InDesign Document
+# *.idml Adobe InDesign Markup Language
+# *.indt Adobe InDesign Template
+# *.indl Adobe InDesign Library
+# *.indb Adobe InDesign Book
+# *.inx Adobe InDesign Interchange (older)
+# *.pmd Adobe PageMaker Document (older)
+# *.qxd QuarkXPress Document
+# *.qxt QuarkXPress Template
+# *.blend Blender 3D File
+# *.blend1 Blender Auto-Save
+# *.blend2 Blender Auto-Save
+# *.skp SketchUp Model
+# *.dwg AutoCAD Drawing
+# *.dxf Drawing Exchange Format
+# *.dwt AutoCAD Drawing Template
+# *.dws AutoCAD Drawing Standards
+# *.dst AutoCAD Sheet Set
+# *.ifc Industry Foundation Classes (BIM)
+# *.nwc Navisworks Cache File
+# *.nwd Navisworks Document File
+# *.nwf Navisworks File Set
+# *.rvt Revit Project
+# *.rfa Revit Family
+# *.rte Revit Template
+# *.rft Revit Family Template
+# *.pat AutoCAD Hatch Pattern / Revit Pattern
+# *.sldprt SolidWorks Part
+# *.sldasm SolidWorks Assembly
+# *.slddrw SolidWorks Drawing
+# *.prt Creo/Pro/ENGINEER Part
+# *.asm Creo/Pro/ENGINEER Assembly
+# *.drw Creo/Pro/ENGINEER Drawing
+# *.catpart CATIA Part
+# *.catproduct CATIA Product (Assembly)
+# *.catdrawing CATIA Drawing
+# *.cgr CATIA Graphical Representation
+# *.ipt Autodesk Inventor Part
+# *.iam Autodesk Inventor Assembly
+# *.idw Autodesk Inventor Drawing
+# *.ipn Autodesk Inventor Presentation
+# *.iges Initial Graphics Exchange Specification
+# *.igs Initial Graphics Exchange Specification
+# *.step Standard for the Exchange of Product model data
+# *.stp Standard for the Exchange of Product model data
+# *.stl Stereolithography (3D Printing)
+# *.3mf 3D Manufacturing Format (3D Printing)
+# *.amf Additive Manufacturing File Format (3D Printing)
+# *.ply Polygon File Format / Stanford Triangle Format
+# *.fbx Autodesk FBX (Filmbox)
+# *.dae Collada
+# *.x DirectX Model
+# *.wrl VRML World
+# *.vrml VRML World
+# *.x3d Extensible 3D
+# *.x3dv Extensible 3D (VRML encoding)
+# *.x3db Extensible 3D (Binary encoding)
+# *.3ds 3D Studio Model
+# *.max 3ds Max Scene
+# *.c4d Cinema 4D Scene
+# *.lwo LightWave Object
+# *.lws LightWave Scene
+# *.lxo Modo Scene
+# *.ma Maya ASCII Scene
+# *.mb Maya Binary Scene
+# *.hip Houdini Scene
+# *.hipnc Houdini Scene (non-commercial)
+# *.hda Houdini Digital Asset
+# *.otl Houdini Operator Type Library
+# *.obj Wavefront Object
+# *.mtl Wavefront Material Library
+# *.zpr ZBrush Project
+# *.ztl ZBrush Tool
+# *.zbp ZBrush Brush Preset
+# *.zmp ZBrush Material Preset
+# *.zcl ZBrush Color Preset
+# *.zgr ZBrush Gradient Preset
+# *.zalpha ZBrush Alpha
+# *.psd Photoshop Document
+# *.psb Photoshop Large Document
+# *.tiff TIFF Image
+# *.tif TIFF Image
+# *.jpg JPEG Image
+# *.jpeg JPEG Image
+# *.jpe JPEG Image
+# *.jif JPEG Image
+# *.jfif JPEG Image
+# *.jp2 JPEG 2000 Image
+# *.jpx JPEG 2000 Image
+# *.jpm JPEG 2000 Image
+# *.mj2 Motion JPEG 2000
+# *.gif GIF Image
+# *.png PNG Image
+# *.apng Animated PNG
+# *.mng Multiple-image Network Graphics
+# *.webp WebP Image
+# *.bmp BMP Image
+# *.dib Device Independent Bitmap
+# *.ico Windows Icon
+# *.cur Windows Cursor
+# *.ani Animated Cursor
+# *.tga Targa Image
+# *.pcx PCPaint ZSoft Image
+# *.iff Amiga IFF Image
+# *.lbm Amiga IFF Interleaved Bitmap
+# *.ppm Portable Pixmap
+# *.pgm Portable Graymap
+# *.pbm Portable Bitmap
+# *.pnm Portable Anymap
+# *.hdr Radiance HDR Image
+# *.exr OpenEXR Image
+# *.svg Scalable Vector Graphics
+# *.svgz Compressed SVG
+# *.eps Encapsulated PostScript
+# *.ai Adobe Illustrator
+# *.pdf Portable Document Format
+# *.djvu DjVu Image
+# *.wdp Windows Media Photo / HD Photo
+# *.jxr JPEG XR / HD Photo
+# *.hdp HD Photo
+# *.heic HEIC Image
+# *.heif HEIF Image
+# *.avif AVIF Image
+# *.jxl JPEG XL Image
+# *.dcm DICOM Medical Image
+# *.dicom DICOM Medical Image
+# *.fits FITS Astronomical Image
+# *.fts FITS Astronomical Image
+# *.xpm X PixMap Image
+# *.xbm X BitMap Image
+# *.wbm Wireless Bitmap
+# *.wbmp Wireless Bitmap
+# *.sgi Silicon Graphics Image
+# *.bw SGI Black & White Image
+# *.rgb SGI RGB Image
+# *.rgba SGI RGBA Image
+# *.ras Sun Raster Image
+# *.im InterView Bitmap
+# *.pict Apple PICT Image
+# *.pct Apple PICT Image
+# *.pntg MacPaint Image
+# *.icns Apple Icon Image
+# *.qtif QuickTime Image File
+# *.fpx FlashPix Image
+# *.mix Microsoft PhotoDraw Image
+# *.sct Scitex CT Image
+# *.cin Kodak Cineon Image
+# *.dpx Digital Picture Exchange
+# *.ktx Khronos Texture
+# *.ktx2 Khronos Texture 2.0
+# *.basis Basis Universal Texture
+# *.dds DirectDraw Surface
+# *.pvr PowerVR Texture
+# *.astc ASTC Texture
+# *.pk_m ETC1/ETC2 Texture (Mali)
+# *.pkm ETC1/ETC2 Texture (Mali)
+# *.3dc ATI 3Dc Texture
+# *.texture Unity Texture Asset (older)
+# *.fontsettings Unity Font Settings
+# *.asset Unity Generic Asset
+# *.unity Unity Scene
+# *.prefab Unity Prefab
+# *.mat Unity Material
+# *.anim Unity Animation Clip
+# *.controller Unity Animator Controller
+# *.overrideController Unity Animator Override Controller
+# *.mask Unity Avatar Mask
+# *.shader Unity Shader
+# *.cginc Unity Shader Include
+# *.compute Unity Compute Shader
+# *.glsl GLSL Shader
+# *.frag Fragment Shader
+# *.vert Vertex Shader
+# *.geom Geometry Shader
+# *.tesc Tessellation Control Shader
+# *.tese Tessellation Evaluation Shader
+# *.comp Compute Shader
+# *.hlsl HLSL Shader
+# *.fx HLSL Effect File
+# *.cso Compiled Shader Object (DirectX)
+# *.spirv SPIR-V Shader
+# *.spv SPIR-V Shader
+# *.metal Apple Metal Shading Language
+# *.wgsl WebGPU Shading Language
+# *.msl Metal Shading Language (macOS/iOS)
+# *.rsl RenderMan Shading Language
+# *.osl Open Shading Language
+# *.slo Shader Language Object (RenderMan)
+# *.h VEX Header (Houdini)
+# *.vfl VEX Function Library (Houdini)
+# *.vex VEX Shader (Houdini)
+# *.pov POV-Ray Scene
+# *.inc POV-Ray Include
+# *.ttf TrueType Font
+# *.otf OpenType Font
+# *.woff Web Open Font Format
+# *.woff2 Web Open Font Format 2.0
+# *.eot Embedded OpenType
+# *.ttc TrueType Collection
+# *.dfont Mac OS X Data Fork Font
+# *.pfa PostScript Font ASCII
+# *.pfb PostScript Font Binary
+# *.pfm PostScript Font Metrics
+# *.afm Adobe Font Metrics
+# *.mf Metafont Source
+# *.gf Generic Font (Metafont output)
+# *.pk Packed Font (Metafont output)
+# *.vf Virtual Font (TeX)
+# *.tfm TeX Font Metrics
+# *.sfd Spline Font Database (FontForge)
+# *.ufo Unified Font Object
+# *.glyphs Glyphs Font File
+# *.vfb FontLab Studio File
+# *.otf.gz Compressed OpenType Font
+# *.ttf.gz Compressed TrueType Font
+# *.woff.gz Compressed WOFF Font
+# *.woff2.gz Compressed WOFF2 Font
+# *.wav WAV Audio
+# *.wave WAV Audio
+# *.bwf Broadcast Wave Format
+# *.mp3 MP3 Audio
+# *.ogg Ogg Vorbis Audio
+# *.oga Ogg Audio (generic)
+# *.opus Ogg Opus Audio
+# *.flac FLAC Audio
+# *.aac AAC Audio
+# *.m4a Apple MPEG-4 Audio (AAC or ALAC)
+# *.m4b Apple MPEG-4 Audiobook
+# *.m4p Apple MPEG-4 Protected Audio
+# *.m4r Apple iPhone Ringtone
+# *.alac Apple Lossless Audio Codec
+# *.ape Monkey's Audio
+# *.wv WavPack Audio
+# *.aiff AIFF Audio
+# *.aif AIFF Audio
+# *.aifc Compressed AIFF Audio
+# *.caf Core Audio Format
+# *.gsm GSM Audio
+# *.dct DCT Audio
+# *.dss Digital Speech Standard
+# *.dvf Sony Digital Voice File
+# *.msv Sony Memory Stick Voice
+# *.sln Signed Linear PCM (Asterisk)
+# *.vox Dialogic VOX ADPCM
+# *.rm RealMedia Audio
+# *.ra RealAudio
+# *.ram RealAudio Metadata
+# *.wma Windows Media Audio
+# *.amr Adaptive Multi-Rate Audio
+# *.awb AMR Wideband Audio
+# *.mid MIDI Audio
+# *.midi MIDI Audio
+# *.rmi RIFF MIDI Audio
+# *.kar Karaoke MIDI Audio
+# *.mod Amiga Module Audio
+# *.s3m ScreamTracker 3 Module
+# *.xm FastTracker 2 Module
+# *.it Impulse Tracker Module
+# *.mtm MultiTracker Module
+# *.stm ScreamTracker Module
+# *.ult UltraTracker Module
+# *.far Farandole Composer Module
+# *.ptm PolyTracker Module
+# *.med OctaMED Module
+# *.dsm Digital Sound Module
+# *.umx Unreal Engine Music Package
+# *.sf2 SoundFont 2 Bank
+# *.sfz SFZ Sampler Definition
+# *.sfark Compressed SoundFont Archive
+# *.pat Gravis Ultrasound Patch
+# *.xi FastTracker 2 Instrument
+# *.iti Impulse Tracker Instrument
+# *.its Impulse Tracker Sample
+# *.smp Sample (generic)
+# *.raw Raw Audio Data
+# *.pcm Pulse Code Modulation Audio
+# *.cda CD Audio Track Shortcut
+# *.mpl Winamp Playlist
+# *.pls SHOUTcast Playlist
+# *.m3u MP3 URL Playlist
+# *.m3u8 Unicode MP3 URL Playlist / HLS Manifest
+# *.xspf XML Shareable Playlist Format
+# *.asx Windows Media Playlist
+# *.wpl Windows Media Player Playlist
+# *.cue Cuesheet
+# *.nfo Info File (often with releases)
+# *.diz Description In Zip
+# *.sfv Simple File Verification
+# *.md5 MD5 Checksum File
+# *.sha1 SHA-1 Checksum File
+# *.sha256 SHA-256 Checksum File
+# *.sha512 SHA-512 Checksum File
+# *.torrent BitTorrent File
+# *.iso ISO Disk Image
+# *.img Disk Image
+# *.bin Binary Disk Image / Firmware
+# *.cue Cuesheet (for Disk Images)
+# *.ccd CloneCD Control File
+# *.sub CloneCD Subchannel Data
+# *.mds Media Descriptor File (Alcohol 120%)
+# *.mdf Media Disc Image File (Alcohol 120%)
+# *.nrg Nero Burning ROM Image
+# *.gi GlobalImage Disk Image
+# *.dmg Apple Disk Image
+# *.toast Roxio Toast Disk Image
+# *.vcd Virtual CD Image
+# *.isz Compressed ISO Disk Image
+# *.daa Direct Access Archive
+# *.uif Universal Image Format
+# *. UIF Universal Image Format (alternate)
+# *.b5t BlindWrite 5 Track
+# *.b5i BlindWrite 5 Image
+# *.b6t BlindWrite 6 Track
+# *.b6i BlindWrite 6 Image
+# *.pdi Instant CD/DVD Image
+# *.cif CorelDRAW Image File / Easy CD Creator CIF
+# *.fcd Virtual CD-ROM File
+# *.vmdk VMware Virtual Disk
+# *.vhd Virtual Hard Disk
+# *.vhdx Virtual Hard Disk v2
+# *.vdi VirtualBox Disk Image
+# *.hdd Parallels Hard Disk
+# *.qcow QEMU Copy-On-Write Disk Image
+# *.qcow2 QEMU Copy-On-Write Disk Image v2
+# *.qed QEMU Enhanced Disk Image
+# *.ova Open Virtualization Archive
+# *.ovf Open Virtualization Format
+# *.pvm Parallels Virtual Machine
+# *.vmx VMware Configuration File
+# *.vmxf VMware Team Configuration File
+# *.vmsd VMware Snapshot Metadata
+# *.vmsn VMware Snapshot Data
+# *.vmss VMware Suspended State
+# *.nvram VMware NVRAM
+# *.vbox VirtualBox Machine Definition
+# *.vbox-prev VirtualBox Machine Definition (previous)
+# *.pvs Parallels VM Snapshot
+# *.mem Parallels VM Memory Dump
+# *.xva XenServer Virtual Appliance
+# *.imgPTN Partition Image (Syslinux)
+# *.wim Windows Imaging Format
+# *.swm Split Windows Imaging Format
+# *.esd Electronic Software Download (Windows)
+# *.gho Norton Ghost Image
+# *.ghs Norton Ghost Span
+# *.tib Acronis True Image Backup
+# *.adi AOMEI Backupper Image
+# *.mrimg Macrium Reflect Image
+# *.pbd Paragon Backup Data
+# *.spf ShadowProtect Full Backup
+# *.spi ShadowProtect Incremental Backup
+# *.bkf Windows Backup File
+# *.zip ZIP Archive
+# *.rar RAR Archive
+# *.7z 7-Zip Archive
+# *.tar Tarball Archive
+# *.gz Gzip Compressed Archive
+# *.tgz Gzip Compressed Tarball
+# *.bz2 Bzip2 Compressed Archive
+# *.tbz2 Bzip2 Compressed Tarball
+# *.xz XZ Compressed Archive
+# *.txz XZ Compressed Tarball
+# *.lzma LZMA Compressed Archive
+# *.tlz LZMA Compressed Tarball
+# *.lz LZ Lzip Compressed Archive
+# *.lzh LHA/LZH Archive
+# *.z Z Compressed Archive (Unix compress)
+# *.arj ARJ Archive
+# *.cab Microsoft Cabinet Archive
+# *.rpm RPM Package
+# *.deb Debian Package
+# *.pkg macOS Installer Package / Solaris Package
+# *.mpkg macOS Metapackage
+# *.dmg macOS Disk Image (often for distribution)
+# *.exe Windows Executable / Self-Extracting Archive
+# *.msi Windows Installer Package
+# *.msp Windows Installer Patch
+# *.msu Windows Update Standalone Package
+# *.msm Windows Merge Module
+# *.app macOS Application Bundle
+# *.xpi Firefox/Thunderbird Extension
+# *.crx Chrome Extension
+# *.nex Opera Extension
+# *.oxt OpenOffice/LibreOffice Extension
+# *.safariextz Safari Extension
+# *.jar Java Archive (can be executable)
+# *.war Java Web Archive
+# *.ear Java Enterprise Archive
+# *.apk Android Package
+# *.ipa iOS App Store Package
+# *.xap Windows Phone Application Package
+# *.a AR Static Library (Unix)
+# *.lib Static Library (Windows)
+# *.so Shared Object Library (Linux)
+# *.dylib Dynamic Library (macOS)
+# *.dll Dynamic Link Library (Windows)
+# *.bundle macOS Bundle / Plugin
+# *.framework macOS Framework
+# *.kext macOS Kernel Extension
+# *.plugin Generic Plugin
+# *.sys Windows System File / Driver
+# *.drv Windows Driver
+# *.ocx ActiveX Control
+# *.cpl Control Panel Item
+# *.scr Windows Screen Saver
+# *.efi EFI Application
+# *.elf Executable and Linkable Format
+# *.o Object File
+# *.obj Object File (Windows)
+# *.out Executable (older Unix)
+# *.coff Common Object File Format
+# *.pdb Program Database (Microsoft Debug Symbols)
+# *.dbg Debug Symbols (generic)
+# *.dsym Debug Symbols (Apple)
+# *.sym Generic Symbol File
+# *.map Linker Map File
+# *.idb IDA Pro Database
+# *.i64 IDA Pro Database (64-bit)
+# *.til IDA Pro Type Information Library
+# *.ghidra Ghidra Project Archive
+# *.rep Ghidra Project Repository
+# *.gpr Ghidra Project Properties
+# *.exe.config .NET Application Configuration
+# *.dll.config .NET Library Configuration
+# *.web.config ASP.NET Web Configuration
+# *.app.config .NET Application Configuration (older)
+# *.sln Visual Studio Solution
+# *.csproj C# Project
+# *.vbproj VB.NET Project
+# *.fsproj F# Project
+# *.vcxproj C++ Project (Visual Studio)
+# *.vcproj C++ Project (older Visual Studio)
+# *.dbproj Database Project (Visual Studio)
+# *.sqlproj SQL Server Project (Visual Studio)
+# *.pyproj Python Project (Visual Studio)
+# *.njsproj Node.js Project (Visual Studio)
+# *.tsproj TypeScript Project (Visual Studio)
+# *.esproj JavaScript Project (Visual Studio)
+# *.shproj Shared Project (Visual Studio)
+# *.ccproj Cloud Service Project (Azure SDK for .NET)
+# *.sfproj Service Fabric Project (Azure SDK for .NET)
+# *.dcproj Docker Compose Project (Visual Studio)
+# *.user User-specific Project Settings (Visual Studio)
+# *.suo Solution User Options (Visual Studio)
+# *.vspscc Visual Studio Project Source Code Control Info
+# *.vssscc Visual Studio Solution Source Code Control Info
+# *.vssettings Visual Studio Settings
+# *.vsix VSIX Package (Visual Studio Extension)
+# *.vsixmanifest VSIX Manifest
+# *.pkgdef Visual Studio Package Definition
+# *.pdb Program Database (Debug Symbols)
+# *.ilk Incremental Link File
+# *.exp Export File (DLL)
+# *.aps Resource Script Binary (Visual C++)
+# *.bsc Browser Source File (Visual C++)
+# *.sbr Browser Source File (Visual C++)
+# *.ncb IntelliSense Database (Visual C++ older)
+# *.sdf IntelliSense Database (Visual C++)
+# *.ipch IntelliSense Precompiled Header (Visual C++)
+# *.opensdf IntelliSense Database (Visual C++)
+# *.vcxproj.filters VC++ Filter File
+# *.vcxproj.user VC++ User File
+# *.props MSBuild Property Sheet
+# *.targets MSBuild Targets File
+# *.ruleset Code Analysis Rule Set
+# *.editorconfig EditorConfig File
+# *.swp Vim Swap File
+# *.swo Vim Swap File (persistent undo)
+# *~ Backup File (many editors)
+# #*# Emacs Autosave File
+# .#* Emacs Lock File
+# *.bak Backup File
+# *.old Backup File
+# *.orig Original File (before patch)
+# *.rej Rejected Patch Hunks
+# *.patch Patch File
+# *.diff Diff File
+# *.log Log File
+# *.pid Process ID File
+# *.lock Lock File
+# *.tmp Temporary File
+# *.temp Temporary File
+# *.DS_Store macOS Finder Metadata
+# Thumbs.db Windows Explorer Thumbnail Cache
+# desktop.ini Windows Folder Customization
+# .idea/ IntelliJ IDEA Project Folder
+# .vscode/ Visual Studio Code Folder
+# .project Eclipse Project File
+# .classpath Eclipse Classpath File
+# .settings/ Eclipse Project Settings Folder
+# *.iml IntelliJ IDEA Module File
+# *.ipr IntelliJ IDEA Project File (older)
+# *.iws IntelliJ IDEA Workspace File (older)
+# *.sublime-project Sublime Text Project
+# *.sublime-workspace Sublime Text Workspace
+# *.komodoproject Komodo Edit/IDE Project
+# *.buildpath Code::Blocks Build Path
+# *.cbp Code::Blocks Project
+# *.depend Code::Blocks Dependencies
+# *.layout Code::Blocks Layout
+# *.workspace Code::Blocks Workspace
+# *.dev Dev-C++ Project
+# *.dsp Developer Studio Project (VC++ 6)
+# *.dsw Developer Studio Workspace (VC++ 6)
+# *.sln Visual Studio Solution
+# *.xcodeproj Xcode Project
+# *.xcworkspace Xcode Workspace
+# Makefile Makefile
+# makefile Makefile
+# GNUmakefile GNU Makefile
+# CMakeLists.txt CMake Build Script
+# *.cmake CMake Module/Script
+# build/ Common Build Output Directory
+# dist/ Common Distribution Directory
+# out/ Common Output Directory
+# bin/ Common Binary Output Directory
+# lib/ Common Library Output Directory
+# obj/ Common Object File Directory
+# Debug/ Common Debug Build Output Directory
+# Release/ Common Release Build Output Directory
+# target/ Common Build Output Directory (Rust, Java with Maven/Gradle)
+# node_modules/ Node.js Dependencies
+# bower_components/ Bower Dependencies
+# vendor/ PHP Composer Dependencies / Ruby Gems / Go Dependencies
+# Godeps/ Go Dependencies (older)
+# _build/ Elixir Mix Build Output / Sphinx Build Output
+# deps/ Elixir Mix Dependencies
+# elm-stuff/ Elm Build Artifacts and Dependencies
+# .gradle/ Gradle Cache
+# .settings/ Eclipse settings directory
+# .classpath Eclipse classpath file
+# .project Eclipse project file
+# .buildpath Phing build path
+#nbproject/ Netbeans project files
+#*.kdev4 KDevelop4 project file
+#*.kdev4.lock KDevelop4 lock file
+#*.kdev4.rc KDevelop4 rc file
+#*.kdev4.session KDevelop4 session file
+#*.kdev4.Makefile.am KDevelop4 Makefile.am
+#*.kdev4.Makefile.in KDevelop4 Makefile.in
+#*.kdev4.pc KDevelop4 pc file
+#*.kdev4.spec KDevelop4 spec file
+#*.kdevelop KDevelop project file (older)
+#*.kdevelop.pcs KDevelop project file (older)
+#*.kdevelop.session KDevelop project file (older)
+#*.kdevses KDevelop project file (older)
+#*.prj CodeLite project file
+#*.project CodeLite project file
+#*.tags CodeLite tags file
+#*.workspace CodeLite workspace file
+#*.creator Qt Creator project file
+#*.creator.user Qt Creator user specific project file
+#*.pro Qt Project file
+#*.pri Qt Include file
+#*.ui Qt Designer UI file
+#moc_*.cpp Qt MOC generated file
+#qrc_*.cpp Qt RCC generated file
+#ui_*.h Qt UIC generated file
+#*.jucer JUCE Projector file
+#*.xcodeproj/project.xcworkspace/contents.xcworkspacedata Xcode workspace data
+#*.xcodeproj/project.pbxproj Xcode project file
+#*.xcodeproj/xcuserdata/ Xcode user specific data
+#*.xcworkspace/contents.xcworkspacedata Xcode workspace data
+#*.xcworkspace/xcuserdata/ Xcode user specific data
+#xcuserdata/ Xcode user specific data
+#*.xccheckout Xcode checkout file
+#*.moved-aside Xcode moved aside file
+#DerivedData/ Xcode derived data
+#Build/ Xcode build products
+#*.hmap Xcode header map
+#*.ipa iOS App Archive
+#*.dsym.zip iOS Debug Symbols Archive
+#*.mobileprovision iOS Provisioning Profile
+#*.keystore Android Keystore
+#*.jks Java Keystore
+#*.cer Certificate
+#*.pem PEM encoded file (often certs or keys)
+#*.key Private Key
+#*.pub Public Key
+#*.csr Certificate Signing Request
+#*.crl Certificate Revocation List
+#*.p12 PKCS#12
+#*.pfx PKCS#12
+#*.p7b PKCS#7
+#*.p7c PKCS#7
+#*.p8 PKCS#8
+#*.asc PGP ASCII armored file
+#*.gpg GPG encrypted file
+#*.sig PGP signature
+#*.sops SOPS encrypted file
+#*.env Environment variables file
+#.env.* Environment specific variables file
+#.envrc Direnv allowed file
+# Pipfile.lock Pipenv lock file
+#poetry.lock Poetry lock file
+#Pipfile Pipenv file
+#pyproject.toml Python project configuration (PEP 518)
+#MANIFEST.in Python package manifest
+#setup.py Python package setup script
+#setup.cfg Python package configuration
+#requirements.txt Python dependencies
+#requirements-dev.txt Python development dependencies
+#requirements/*.txt Python dependencies in a folder
+#tox.ini Tox configuration
+#noxfile.py Nox configuration
+#.pylintrc Pylint configuration
+#.flake8 Flake8 configuration
+#.isort.cfg isort configuration
+#mypy.ini MyPy configuration
+#pytest.ini Pytest configuration
+#coverage.xml Coverage report
+#.coverage Coverage data
+#htmlcov/ HTML coverage report
+#instance/ Flask instance folder
+#migrations/ Alembic/Django migrations folder
+#db.sqlite3 SQLite database (common for Django/Flask dev)
+#*.sqlite SQLite database
+#*.db SQLite database (generic)
+#media/ Django media files
+#static_collected/ Django collectstatic output
+#staticfiles/ Django static files output (alternate)
+#node_modules/ Node.js packages
+#package-lock.json npm lock file
+#yarn.lock Yarn lock file
+#bower_components/ Bower packages
+#jspm_packages/ JSPM packages
+#typings/ TypeScript typings (older)
+#@types/ TypeScript typings
+#*.css.map CSS source map
+#*.js.map JavaScript source map
+#*.tsbuildinfo TypeScript build info
+#*.d.ts TypeScript definition file (if generated into source tree, often excluded)
+#*.log Log files
+#*.err Error log files
+#*.pid Process ID files
+#*.swp Vim swap file
+#*~ Emacs/Kate backup file
+#*.bak Backup file
+#*.tmp Temporary file
+#*.patch Patch file
+#*.diff Diff file
+#*.orig Original file (from patch)
+#*.rej Rejected patch hunks
+#*# Emacs auto-save file
+#.#* Emacs lock file
+#.DS_Store macOS metadata
+#Thumbs.db Windows metadata
+#desktop.ini Windows metadata
+#build/ General build output
+#dist/ General distribution output
+#target/ Rust/Maven/Gradle build output
+#bin/ Compiled binaries
+#lib/ Compiled libraries
+#obj/ Object files
+#out/ General output
+#gen/ Generated files
+#generated/ Generated files
+#vendor/ Vendored dependencies (Go, Ruby, PHP)
+#Godeps/ Go dependencies (older)
+#elm-stuff/ Elm build artifacts
+#.sass-cache/ Sass cache
+#.cache/ Generic cache folder
+#.pytest_cache/ Pytest cache
+#.mypy_cache/ MyPy cache
+#.tox/ Tox virtualenvs
+#.venv/ Python virtualenv
+#venv/ Python virtualenv
+#env/ Python virtualenv
+#.env Python virtualenv (often for dotenv files too)
+#ENV/ Python virtualenv
+#VENV/ Python virtualenv
+#__pypackages__/ PEP 582 local packages
+#celerybeat-schedule Celery beat schedule file
+#celerybeat.pid Celery beat PID file
+#.python-version pyenv local Python version
+#coverage.xml Cobertura coverage report
+#lcov.info LCOV coverage report
+#*.gcno GCC coverage data
+#*.gcda GCC coverage data
+#reports/ Generic reports folder
+#docs/_build/ Sphinx documentation output
+#site/ MkDocs/Jekyll output
+#public/ General public web root for static sites or SPAs
+#storybook-static/ Storybook build output
+#styleguide/ Style guide build output
+#.DS_Store
+#*~
+#*.swp
+#*.swo
+#desktop.ini
+#Thumbs.db
+#ehthumbs.db
+#Icon?
+#.Spotlight-V100
+#.Trashes
+#.fseventsd
+#*.bak
+#*.tmp
+#*.orig
+#*.rej
+#*.pyc
+#*.pyo
+#__pycache__/
+#.idea/
+#.vscode/
+#*.sublime-project
+#*.sublime-workspace
+#build/
+#dist/
+#*.egg-info/
+#*.egg
+#*.spec
+#logs/
+#*.log
+#venv/
+#.venv/
+#env/
+#.env
+#instance/
+#db.sqlite3
+#*.sqlite3
+#*.db
+#media/
+#node_modules/
+#package-lock.json
+#yarn.lock
+#.pytest_cache/
+#.mypy_cache/
+#.coverage
+#htmlcov/
+#docs/_build/
+#site/
+#*.so
+#*.dll
+#*.exe
+#*.out
+#*.app
+#*.bundle
+#*.dylib
+#*.a
+#*.lib
+#*.o
+#*.obj
+#*.manifest
+#*.gch
+#*.pch
+#*.DS_Store
+#Thumbs.db
+#desktop.ini
+#ehthumbs.db
+#Icon?
+#.Spotlight-V100
+#.Trashes
+#.fseventsd
+#*~
+#*.swp
+#*.swo
+#*.bak
+#*.tmp
+#*.orig
+#*.rej
+#*.pyc
+#*.pyo
+#__pycache__/
+#.idea/
+#.vscode/
+#*.sublime-project
+#*.sublime-workspace
+#build/
+#dist/
+#*.egg-info/
+#*.egg
+#*.spec
+#logs/
+#*.log
+#venv/
+#.venv/
+#env/
+#.env
+#instance/
+#db.sqlite3
+#*.sqlite3
+#*.db
+#media/
+#node_modules/
+#package-lock.json
+#yarn.lock
+#.pytest_cache/
+#.mypy_cache/
+#.coverage
+#htmlcov/
+#docs/_build/
+#site/
+#*.so
+#*.dll
+#*.exe
+#*.out
+#*.app
+#*.bundle
+#*.dylib
+#*.a
+#*.lib
+#*.o
+#*.obj
+#*.manifest
+#*.gch
+#*.pch
+#config.py
+#local_settings.py
+#settings_local.py
+#*.DS_Store
+#*~
+#*.swp
+#*.swo
+#desktop.ini
+#Thumbs.db
+#ehthumbs.db
+#Icon?
+#.Spotlight-V100
+#.Trashes
+#.fseventsd
+#*.bak
+#*.tmp
+#*.orig
+#*.rej
+#*.pyc
+#*.pyo
+#__pycache__/
+#.idea/
+#.vscode/
+#*.sublime-project
+#*.sublime-workspace
+#build/
+#dist/
+#*.egg-info/
+#*.egg
+#*.spec
+#logs/
+#*.log
+#venv/
+#.venv/
+#env/
+#.env
+#instance/
+#db.sqlite3
+#*.sqlite3
+#*.db
+#media/
+#node_modules/
+#package-lock.json
+#yarn.lock
+#.pytest_cache/
+#.mypy_cache/
+#.coverage
+#htmlcov/
+#docs/_build/
+#site/
+#*.so
+#*.dll
+#*.exe
+#*.out
+#*.app
+#*.bundle
+#*.dylib
+#*.a
+#*.lib
+#*.o
+#*.obj
+#*.manifest
+#*.gch
+#*.pch
+#config.py
+#local_settings.py
+#settings_local.py
+#assets/textures/*.png
+#assets/textures/*.jpg
+#assets/textures/*.jpeg
+#assets/textures/*.gif
+#*.bam
+#*.egg
+#*.egg.pz
+#*.obj
+#*.mtl
+#*.gltf
+#*.glb
+#*.ttf
+#*.otf
+#*.woff
+#*.woff2
+# End of .gitattributes

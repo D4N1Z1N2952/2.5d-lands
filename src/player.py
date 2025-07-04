@@ -160,10 +160,13 @@ class Player(NodePath):
         # So, self.getH() is the current heading.
 
         # Calculate movement in world space based on player's heading
-        current_h_rad = self.getH() * (3.14159 / 180.0)
+        current_h_rad = math.radians(self.getH()) # Convert heading from degrees to radians
         cos_h = math.cos(current_h_rad)
         sin_h = math.sin(current_h_rad)
 
+        # Standard 2D rotation formula for movement vector
+        # Forward/Backward (move_direction.getY()) is along player's local Y
+        # Left/Right (move_direction.getX()) is along player's local X
         world_move_x = move_direction.getX() * cos_h - move_direction.getY() * sin_h
         world_move_y = move_direction.getX() * sin_h + move_direction.getY() * cos_h
 

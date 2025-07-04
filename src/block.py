@@ -12,25 +12,25 @@ class Block(NodePath):
         # For grass, we'll use grass_side for all faces for simplicity with the default box model.
         # A more advanced setup would use different textures for top/bottom/sides.
         try:
-            cls.textures["grass"] = loader.loadTexture("textures/grass_side.png")
+            cls.textures["grass"] = loader.loadTexture("assets/textures/grass_side.png")
             cls.textures["grass"].setMagfilter(Texture.FTNearest)
             cls.textures["grass"].setMinfilter(Texture.FTNearestMipmapNearest)
         except Exception as e:
-            print(f"Warning: Could not load grass texture: {e}. Using fallback color.")
+            print(f"Warning: Could not load grass texture from assets/textures/grass_side.png: {e}. Using fallback color.")
             cls.textures["grass"] = None
 
         try:
-            cls.textures["stone"] = loader.loadTexture("textures/stone.png")
+            cls.textures["stone"] = loader.loadTexture("assets/textures/stone.png")
             cls.textures["stone"].setMagfilter(Texture.FTNearest)
             cls.textures["stone"].setMinfilter(Texture.FTNearestMipmapNearest)
         except Exception as e:
-            print(f"Warning: Could not load stone texture: {e}. Using fallback color.")
+            print(f"Warning: Could not load stone texture from assets/textures/stone.png: {e}. Using fallback color.")
             cls.textures["stone"] = None
 
         # Example for a more complex grass block if using a model with multiple texture stages
         # or a custom shader:
-        # cls.textures["grass_top"] = loader.loadTexture("textures/grass_top.png")
-        # cls.textures["dirt"] = loader.loadTexture("textures/dirt.png")
+        # cls.textures["grass_top"] = loader.loadTexture("assets/textures/grass_top.png")
+        # cls.textures["dirt"] = loader.loadTexture("assets/textures/dirt.png")
 
 
     def __init__(self, base, position=Vec3(0,0,0), block_type="stone"):
@@ -81,9 +81,19 @@ class Block(NodePath):
         self.removeNode()
 
 # Example usage (will be managed by a World class or similar later)
+# Note: If running this script standalone (python src/block.py),
+# texture loading might not work as expected because Block.load_block_textures()
+# relies on paths relative to where the main application (ShowBase instance)
+# is initialized, typically the project root. The main game (src/main.py)
+# handles this correctly. This example is primarily for isolated Block class testing.
 if __name__ == '__main__':
     from direct.showbase.ShowBase import ShowBase
     app = ShowBase()
+
+    # To make textures load in this standalone example, you might need to explicitly call:
+    # Block.load_block_textures(app.loader)
+    # And ensure your current working directory is the project root, or adjust paths.
+    # For simplicity, this example will likely show fallback colors if run directly.
 
     # Create some blocks
     b1 = Block(app, position=Vec3(0,0,0), block_type="grass")
