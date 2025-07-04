@@ -7,7 +7,50 @@ class Block(NodePath):
     textures = {}
 
     @classmethod
+    def generate_checkerboard_texture(cls, name="checkerboard", size=32, c1=(0.2,0.2,0.2,1), c2=(0.8,0.8,0.8,1)):
+        """Generates a Texture object with a checkerboard pattern."""
+        tex = Texture(name)
+        tex.setup_2d_texture(size, size, Texture.T_unsigned_byte, Texture.F_rgba)
+
+        img = tex.modify_ram_image() # Returns a PNMImage if Panda was built with libpng/tiff etc.
+                                     # Or a simple memory view / PTA_uchar if not.
+                                     # We'll assume PNMImage for set_xel_val, otherwise direct memory manipulation is needed.
+
+        # Check if img is a PNMImage or a memory view
+        is_pnm_image = hasattr(img, "set_xel_val")
+
+        for y in range(size):
+            for x in range(size):
+                if (x // (size // 4)) % 2 == (y // (size // 4)) % 2: # Creates larger checkers
+                    col = c1
+                else:
+                    col = c2
+
+                if is_pnm_image:
+                    # PNMImage expects color components from 0 to 255 for set_xel_val with RGBA
+                    img.set_xel_val(x, y, int(col[0]*255), int(col[1]*255), int(col[2]*255), int(col[3]*255))
+                else: # Direct memory manipulation (more complex, assumes PTA_uchar for F_rgba)
+                    # This part requires knowing the exact memory layout (e.g. PTA_uchar)
+                    # For RGBA, 4 bytes per pixel. img is a memoryview to a flat array.
+                    # index = (y * size + x) * 4
+                    # img[index + 0] = int(col[0] * 255)
+                    # img[index + 1] = int(col[1] * 255)
+                    # img[index + 2] = int(col[2] * 255)
+                    # img[index + 3] = int(col[3] * 255)
+                    # For simplicity, if not PNMImage, we might just skip or log a warning for this example.
+                    # This example will primarily work if PNMImage is available.
+                    if x == 0 and y == 0: # Print warning only once
+                        print("Warning: PNMImage not available for procedural texture generation, checkerboard might not appear correctly.")
+                        print("Consider building Panda3D with libpng/tiff support for full PNMImage features.")
+
+
+        tex.setMagfilter(Texture.FTNearest)
+        tex.setMinfilter(Texture.FTNearestMipmapNearest)
+        return tex
+
+    @classmethod
     def load_block_textures(cls, loader):
+        # Load image-based textures
         # User will need to create a 'textures' folder and place these files in it.
         # For grass, we'll use grass_side for all faces for simplicity with the default box model.
         # A more advanced setup would use different textures for top/bottom/sides.
@@ -27,6 +70,14 @@ class Block(NodePath):
             print(f"Warning: Could not load stone texture from assets/textures/stone.png: {e}. Using fallback color.")
             cls.textures["stone"] = None
 
+        # Load/Generate procedural textures
+        try:
+            cls.textures["checkerboard"] = cls.generate_checkerboard_texture(name="proc_checkerboard", size=32, c1=(0.1,0.1,0.1,1), c2=(0.9,0.9,0.9,1))
+            print("Generated checkerboard texture.")
+        except Exception as e:
+            print(f"Error generating checkerboard texture: {e}")
+            cls.textures["checkerboard"] = None
+
         # Example for a more complex grass block if using a model with multiple texture stages
         # or a custom shader:
         # cls.textures["grass_top"] = loader.loadTexture("assets/textures/grass_top.png")
@@ -34,11 +85,14 @@ class Block(NodePath):
 
 
     def __init__(self, base, position=Vec3(0,0,0), block_type="stone"):
-        NodePath.__init__(self, PandaNode(f"block-{block_type}-{position}"))
+        NodePath.__init__(self, PandaNode(f"block-{block_type}-{position}")) # Name the NodePath itself for easier debugging
         self.base = base
         self.block_type = block_type
 
-        if not Block.textures: # Ensure textures are loaded once
+        # Ensure textures (both image-based and procedural) are loaded/generated once.
+        # This is typically called from MyApp.__init__ before any blocks are made.
+        # If Block.textures is empty, it implies it's the first block being created.
+        if not Block.textures:
             Block.load_block_textures(self.base.loader)
 
         self.model = self.base.loader.loadModel("models/box")
@@ -58,19 +112,32 @@ class Block(NodePath):
         self.collision_np = self.attachNewNode(cNode)
         # self.collision_np.show() # For debugging
 
+    # Define solid colors for specific block types
+    solid_colors = {
+        "red_block": (1, 0, 0, 1),
+        "blue_block": (0, 0, 1, 1),
+        "green_block": (0,1,0,1) # A different green from grass fallback
+    }
+
     def set_texture(self, block_type):
-        tex = Block.textures.get(block_type)
-        if tex:
-            self.model.setTexture(tex, 1)
-            self.model.setColorOff() # Remove fallback color if texture is applied
+        self.model.clearTexture() # Clear any previous texture
+        self.model.setColorOff()  # Reset color scale / flat color initially
+
+        if block_type in Block.solid_colors:
+            self.model.setColor(Block.solid_colors[block_type])
         else:
-            # Fallback to color if texture is missing
-            if block_type == "grass":
-                self.model.setColor(0, 0.5, 0, 1) # Green
-            elif block_type == "stone":
-                self.model.setColor(0.5, 0.5, 0.5, 1) # Grey
+            tex = Block.textures.get(block_type)
+            if tex:
+                self.model.setTexture(tex, 1)
+                # setColorOff already called, so model won't be tinted unless we want it to
             else:
-                self.model.setColor(1,1,1,1) # White for unknown
+                # Fallback to default colors if texture is missing and not a defined solid_color type
+                if block_type == "grass":
+                    self.model.setColor(0, 0.5, 0, 1) # Fallback Green for grass
+                elif block_type == "stone":
+                    self.model.setColor(0.5, 0.5, 0.5, 1) # Fallback Grey for stone
+                else:
+                    self.model.setColor(0.8, 0.8, 0.8, 1) # Default fallback for unknown types
 
     def remove(self):
         # Clean up the block

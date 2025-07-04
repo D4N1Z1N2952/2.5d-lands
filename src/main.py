@@ -3,6 +3,8 @@ from panda3d.core import CollisionTraverser, CollisionHandlerQueue, CollisionRay
 from .player import Player # Relative import
 from .block import Block  # Relative import
 import math # For rounding positions
+import json
+import os
 
 class MyApp(ShowBase):
     def __init__(self):
@@ -44,6 +46,10 @@ class MyApp(ShowBase):
         self.current_block_type_to_place = "stone" # Default to stone
         self.accept("1", self.set_block_type_to_place, ["stone"])
         self.accept("2", self.set_block_type_to_place, ["grass"])
+        self.accept("3", self.set_block_type_to_place, ["checkerboard"]) # New procedural block
+        self.accept("4", self.set_block_type_to_place, ["red_block"])    # New color block
+        self.accept("5", self.set_block_type_to_place, ["blue_block"])   # New color block
+        self.accept("0", self.set_block_type_to_place, ["green_block"])  # New color block (using 0 for variety)
 
 
         # Update camera to follow player (and allow mouse look)
@@ -52,8 +58,105 @@ class MyApp(ShowBase):
         # Load block textures once
         Block.load_block_textures(self.loader)
 
-        # Generate the world
-        self.generate_world(size_x=10, size_y=10, ground_height=0, grass_depth=1, stone_depth=2)
+        # Generate the world or load from save
+        self.default_save_filename = "world_save.json"
+        if not self.load_world(self.default_save_filename): # Try to load default save
+            print("No save file found or error loading. Generating new world.")
+            self.generate_world(size_x=10, size_y=10, ground_height=0, grass_depth=1, stone_depth=2)
+
+        # Accept keys for saving/loading
+        self.accept("f5", self.save_world_default)
+        self.accept("f6", self.load_world_default) # Changed from F9 to F6 to avoid potential browser conflicts if run in web plugin
+
+
+    def save_world_default(self):
+        self.save_world(self.default_save_filename)
+
+    def load_world_default(self):
+        self.load_world(self.default_save_filename)
+
+    def save_world(self, filename="world_save.json"):
+        print(f"Saving world to {filename}...")
+        save_dir = "saves"
+        try:
+            if not os.path.exists(save_dir):
+                os.makedirs(save_dir)
+
+            filepath = os.path.join(save_dir, filename)
+
+            world_data_to_save = []
+            for pos_tuple, block_instance in self.blocks.items():
+                block_data = {
+                    "x": pos_tuple[0],
+                    "y": pos_tuple[1],
+                    "z": pos_tuple[2],
+                    "type": block_instance.block_type
+                }
+                world_data_to_save.append(block_data)
+
+            with open(filepath, 'w') as f:
+                json.dump(world_data_to_save, f, indent=4)
+            print(f"World saved successfully to {filepath}")
+            return True
+        except IOError as e:
+            print(f"Error saving world: {e}")
+            return False
+        except Exception as e:
+            print(f"An unexpected error occurred while saving: {e}")
+            return False
+
+    def load_world(self, filename="world_save.json"):
+        print(f"Attempting to load world from {filename}...")
+        save_dir = "saves"
+        filepath = os.path.join(save_dir, filename)
+
+        if not os.path.exists(filepath):
+            print(f"Save file not found: {filepath}")
+            return False
+
+        try:
+            # Clear existing world first
+            # Make a copy of items to iterate over for safe deletion
+            current_block_items = list(self.blocks.items())
+            for pos_tuple, block_instance in current_block_items:
+                # Directly call remove method of block, it should handle its collision node etc.
+                block_instance.remove()
+            self.blocks.clear() # Clear the dictionary
+
+            with open(filepath, 'r') as f:
+                loaded_data = json.load(f)
+
+            if not isinstance(loaded_data, list):
+                print("Error: Save file format is incorrect (should be a list of blocks).")
+                return False
+
+            for block_data in loaded_data:
+                if not isinstance(block_data, dict):
+                    print(f"Warning: Skipping invalid block data entry: {block_data}")
+                    continue
+                try:
+                    pos = Point3(block_data["x"], block_data["y"], block_data["z"])
+                    block_type = block_data["type"]
+                    self.add_block(pos, block_type)
+                except KeyError as e:
+                    print(f"Warning: Skipping block with missing data field {e}: {block_data}")
+                except Exception as e:
+                    print(f"Warning: Error processing block data {block_data}: {e}")
+
+            print(f"World loaded successfully from {filepath}")
+            # Optional: Reset player position or handle gracefully
+            # For now, player will just be where they were, potentially falling if blocks changed.
+            # self.player.setPos(0,0,5) # Example: Reset player to a known safe spot
+            return True
+        except IOError as e:
+            print(f"Error loading world (IOError): {e}")
+            return False
+        except json.JSONDecodeError as e:
+            print(f"Error decoding save file (JSONDecodeError): {e}. File might be corrupted.")
+            return False
+        except Exception as e:
+            print(f"An unexpected error occurred while loading: {e}")
+            return False
 
 
     def generate_world(self, size_x, size_y, ground_height, grass_depth, stone_depth):

@@ -12,10 +12,16 @@ This project is a simple prototype of a Minecraft-like game built using Python a
     *   Break Block: Left Mouse Click
     *   Place Block: Right Mouse Click
     *   Select Block Type for Placing:
-        *   '1': Stone
-        *   '2': Grass
+        *   '1': Stone (textured)
+        *   '2': Grass (textured)
+        *   '3': Checkerboard (procedural texture)
+        *   '4': Red Block (solid color)
+        *   '5': Blue Block (solid color)
+        *   '0': Green Block (solid color)
+    *   Save World: F5 (saves to `saves/world_save.json`)
+    *   Load World: F6 (loads from `saves/world_save.json`)
 *   **World:**
-    *   Simple, flat generated world with grass and stone layers.
+    *   Simple, flat generated world with grass and stone layers (if no save file is found).
     *   Basic collision detection and gravity.
 *   **Texturing:**
     *   Blocks are textured (requires user to provide texture files).
@@ -51,15 +57,26 @@ This project is a simple prototype of a Minecraft-like game built using Python a
     cd <repository-folder>
     ```
 
-2.  **Install Panda3D:**
-    If you have pip (Python's package installer), you can install Panda3D by running:
+2.  **Run the Setup Script (Recommended):**
+    Navigate to the root directory of the project in your terminal and run the setup script:
     ```bash
-    pip install Panda3D
+    python setup_game.py
     ```
-    For more detailed installation instructions or alternative methods, please refer to the [official Panda3D download page](https://www.panda3d.org/download/).
+    This script will:
+    *   Check your Python version.
+    *   Check if `pip` (Python package installer) is available.
+    *   Attempt to install Panda3D if it's not already installed.
+    Follow any instructions or messages provided by the script.
 
-3.  **Place Texture Files:**
-    *   Create the directory `assets/textures/` if it doesn't exist (this step might be automated by the project structure if you clone it after this README is in place).
+3.  **Manual Installation (if setup script fails or preferred):**
+    *   **Install Panda3D:** If you have `pip`, you can install Panda3D by running:
+        ```bash
+        python -m pip install Panda3D
+        ```
+        For more detailed installation instructions or alternative methods, please refer to the [official Panda3D download page](https://www.panda3d.org/download/).
+
+4.  **Place Texture Files:**
+    *   Create the directory `assets/textures/` if it doesn't exist.
     *   You will need to provide your own texture images for the blocks. Place the following files in the `assets/textures/` directory:
         *   `grass_side.png` (used for all sides of grass blocks)
         *   `stone.png`
